@@ -1,0 +1,14 @@
+{
+  "_output_dir": "D:\\Backup\\Work\\DevOps\\Programming\\Apps\\EmailVerify",
+  "_template": "gh:cjolowicz/cookiecutter-hypermodern-python",
+  "author": "Danh",
+  "copyright_year": "2022",
+  "development_status": "Development Status :: 1 - Planning",
+  "email": "danh118@hotmail.co.uk",
+  "friendly_name": "Dan",
+  "github_user": "danlhennessy",
+  "license": "MIT",
+  "package_name": "testemailverify",
+  "project_name": "emailverify",
+  "version": "0.0.0"
+}
