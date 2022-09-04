@@ -1,7 +1,8 @@
 """re."""
-import click
 
 import re
+
+import click
 
 
 @click.command()
