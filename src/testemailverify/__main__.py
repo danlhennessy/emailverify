@@ -1,8 +1,7 @@
 """re."""
 
-import re
-import typing
 import os
+import re
 
 import click
 
@@ -14,7 +13,7 @@ def main() -> None:
 
 
 dirname = os.path.dirname(__file__)
-filename = os.path.join(dirname, 'text.txt')
+filename = os.path.join(dirname, "text.txt")
 
 print(filename)
 
@@ -25,15 +24,11 @@ def verify_email(file: str) -> str:
     with open(file) as f:
         for i, line in enumerate(f.readlines()):
             for match in re.finditer(email_pattern, line):
-                print("Found on line {}: {}".format(i + 1, match.group()))
+                print(f"Found on line {i + 1}: {match.group()}")
     return "Checks Complete"
 
 
-print(
-    verify_email(
-        filename
-    )
-)
+print(verify_email(filename))
 
 if __name__ == "__main__":
     main(prog_name="emailverify")  # pragma: no cover
