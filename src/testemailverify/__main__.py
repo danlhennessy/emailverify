@@ -2,6 +2,8 @@
 
 import re
 import typing
+import os
+
 import click
 
 
@@ -11,24 +13,27 @@ def main() -> None:
     """Dan."""
 
 
-string = """sdfsdfdsfds
-donh128@gomail.com
-www.google.com
-fel123
-"""
+dirname = os.path.dirname(__file__)
+filename = os.path.join(dirname, 'text.txt')
+
+print(filename)
 
 
-def verify_email(file: typing.TextIO) -> str:
+def verify_email(file: str) -> str:
     """Checks text for valid email addresses."""
     email_pattern = re.compile(r"\w+@\w+\.\w+")
     with open(file) as f:
         for i, line in enumerate(f.readlines()):
             for match in re.finditer(email_pattern, line):
-                print('Found on line %s: %s' % (i+1, match.group()))
-    return 'Checks Complete'
+                print("Found on line {}: {}".format(i + 1, match.group()))
+    return "Checks Complete"
 
 
-print(verify_email('D:/Backup/Work/DevOps/Programming/Apps/EmailVerify/emailverify/src/testemailverify/text.txt'))
+print(
+    verify_email(
+        filename
+    )
+)
 
 if __name__ == "__main__":
     main(prog_name="emailverify")  # pragma: no cover
